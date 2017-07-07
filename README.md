@@ -17,7 +17,11 @@ Docker >= 17.0
 2. Start the container
 
   ```shell
-   $ docker run -t --rm --name reach_webui -p 8888:8888 jvwong/reach:master
+   $ docker run -t --rm --name reach_webui -p 8080:8080 jvwong/reach:master
   ```
 
-3. Point your browser to [localhost port 8888](http://localhost:8888)
+3. Point your browser to [localhost port 8080](http://localhost:8080)
+
+## Programmatic access
+
+See the `index.js` which describes the javascript used by this web UI.

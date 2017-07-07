@@ -4,17 +4,16 @@ FROM broadinstitute/scala-baseimage:latest
 
 RUN apt-get update && apt-get install -y git
 
-RUN cd /tmp && git clone -b master https://github.com/clulab/reach.git
-RUN mkdir -p /nlp/reach
+RUN mkdir -p /nlp
+RUN cd /nlp && git clone -b master https://github.com/jvwong/reach.git
 
 WORKDIR /nlp/reach
-RUN cp -r /tmp/reach/. /nlp/reach/
 RUN sbt compile
 
 # RUN chown -R pcuser:pcuser /nlp/reach/
 
-EXPOSE 8888
+EXPOSE 8080
 COPY sbt.sh /
 # USER pcuser
 
-ENTRYPOINT ["/sbt.sh"]
+CMD ["/sbt.sh"]
