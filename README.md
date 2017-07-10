@@ -17,7 +17,7 @@ Docker >= 17.0
 2. Start the container
 
   ```shell
-   $ docker run -t --rm --name reach_webui -p 8080:8080 jvwong/reach:master
+   $ docker run -t --rm --name reach_webui -p 8080:8080 jvwong/reach_docker:master
   ```
 
 3. Point your browser to [localhost port 8080](http://localhost:8080)
