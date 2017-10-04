@@ -7,13 +7,6 @@ RUN apt-get update && apt-get install -y git
 # Fetch the branch and checkout commit 
 RUN mkdir -p /nlp
 
-# Install Stanford CoreNLP 3.X
-WORKDIR /nlp
-RUN wget http://nlp.stanford.edu/software/stanford-corenlp-full-2017-06-09.zip -P /nlp
-RUN unzip stanford-corenlp-full-2017-06-09.zip
-# add CoreNLP to classpath
-WORKDIR cd stanford-corenlp-full-2017-06-09 && for file in find . -name "*.jar"; do env CLASSPATH $CLASSPATH:realpath $file; done
-
 # Fetch the branch and checkout commit 
 RUN cd /nlp && git clone -b master https://github.com/clulab/reach.git
 WORKDIR /nlp/reach
